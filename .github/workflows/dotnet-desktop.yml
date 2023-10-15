@@ -13,7 +13,7 @@ jobs:
         configuration: [Debug, Release]
     runs-on: ubuntu-latest
     container: 
-      image: docker pull mcr.microsoft.com/dotnet/framework/sdk
+      image: mcr.microsoft.com/dotnet/framework/sdk
     steps:
     - name: Checkout
       uses: actions/checkout@v3
