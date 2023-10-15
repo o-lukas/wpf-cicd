@@ -19,5 +19,7 @@ jobs:
         fetch-depth: 0
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.1
+    - name: Directory
+      run: dir
     - name: Build
       run: msbuild -r p:Configuration=${{ matrix.configuration }}
