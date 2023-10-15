@@ -22,4 +22,4 @@ jobs:
     - name: Directory
       run: dir
     - name: Build
-      run: msbuild -r p:Configuration=${{ matrix.configuration }}
+      run: msbuild dotnetframework-docker-cicd.sln -r -p:Configuration=${{ matrix.configuration }}
