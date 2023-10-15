@@ -1,0 +1,24 @@
+.shared_windows_runners:
+  tags:
+    - shared-windows
+    - windows-1809
+  before_script:
+    - $Env:Path += ";C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin"
+
+stages:
+  - build
+  - test
+
+build:
+  extends:
+    - .shared_windows_runners
+  stage: build
+  parallel:
+    matrix:
+      - CONFIGURATION: [Debug, Release]
+  script:
+    - msbuild dotnetframework-docker-cicd.sln -r -t:Rebuild -p:Configuration=$CONFIGURATION
+  artifacts:
+      name: Build results $CONFIGURATION
+      paths:
+          - bin/$CONFIGURATION
