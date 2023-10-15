@@ -19,7 +19,5 @@ jobs:
         fetch-depth: 0
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.1
-    - name: Directory
-      run: dir
     - name: Build
       run: msbuild dotnetframework-docker-cicd.sln -r -p:Configuration=${{ matrix.configuration }}
