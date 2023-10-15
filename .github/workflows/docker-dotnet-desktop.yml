@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         configuration: [Debug, Release]
-    runs-on: windows-2022
+    runs-on: ubuntu-latest
     container: mcr.microsoft.com/dotnet/framework/sdk:4.8.1
     steps:
     - name: Checkout
